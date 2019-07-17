@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import PlayerWinChart from "./PlayerWinChart";
 
 class Player extends Component {
   render() {
-    const player = this.props.player.data;
+    let player = this.props.player.data;
     let list = player.currentDeck.map((item, index) => {
       return (
         <div key={index}>
@@ -13,6 +14,7 @@ class Player extends Component {
     });
     return (
       <div>
+        <PlayerWinChart player={this.props.player} />
         {player.name} {player.clan.name}
         {list}
       </div>
