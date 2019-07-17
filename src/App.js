@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
-import Form from "./components/Form";
 import axios from "axios";
+import { Route, Switch, Redirect } from "react-router-dom";
+
+import Form from "./components/Form";
+import Player from "./components/Player";
+
 class App extends Component {
   constructor() {
     super();
@@ -17,9 +21,6 @@ class App extends Component {
   };
   handlePlayerSearch = e => {
     e.preventDefault();
-    let config = {
-      headers: { Authorization: "bearer " + this.state.tag }
-    };
     axios
       .get("https://api.royaleapi.com/player/" + this.state.tag, {
         headers: {
@@ -29,16 +30,33 @@ class App extends Component {
       })
       .then(response => {
         this.setState({ player: response });
+        this.goToPlayer();
       });
+  };
+  goToPlayer = () => {
+    this.props.history.push("/player");
   };
   render() {
     return (
       <div>
-        <Form
-          player={this.state.player}
-          changeHandler={this.changeHandler}
-          handlePlayerSearch={this.handlePlayerSearch}
-        />
+        <Route exact path="/" render={() => <Redirect to="/search" />} />
+        <Switch>
+          <Route
+            path="/search"
+            render={props => (
+              <Form
+                player={this.state.player}
+                changeHandler={this.changeHandler}
+                handlePlayerSearch={this.handlePlayerSearch}
+                {...props}
+              />
+            )}
+          />
+          <Route
+            path="/player"
+            render={props => <Player player={this.state.player} {...props} />}
+          />
+        </Switch>
       </div>
     );
   }
