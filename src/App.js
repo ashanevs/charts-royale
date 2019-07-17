@@ -5,6 +5,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import Form from "./components/Form";
 import Player from "./components/Player";
+import Header from "./components/Header";
 
 class App extends Component {
   constructor() {
@@ -38,7 +39,8 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="app-container">
+        <Header />
         <Route exact path="/" render={() => <Redirect to="/search" />} />
         <Switch>
           <Route
