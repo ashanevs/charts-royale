@@ -18,10 +18,11 @@
   /* width: 90%; */
   margin-top: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .card-icon {
   width: 100px;
-  margin: 10px;
+  margin: 20px;
 }
 .current-deck-container {
   margin: 20px auto;

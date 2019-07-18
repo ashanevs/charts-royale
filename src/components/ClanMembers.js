@@ -16,7 +16,7 @@ class ClanMembers extends Component {
         </div>
       );
     });
-    return <div>list</div>;
+    return <div>{list}</div>;
   }
 }
 
