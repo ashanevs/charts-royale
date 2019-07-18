@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Doughnut } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 
 class PlayerWinChart extends Component {
   constructor(props) {
@@ -37,10 +37,10 @@ class PlayerWinChart extends Component {
   render() {
     return (
       <div className="chart">
-        <Doughnut
+        <Pie
           data={this.state.chartData}
           // width={200}
-          // height={50}
+          // height={150}
           options={{
             title: {
               display: true,

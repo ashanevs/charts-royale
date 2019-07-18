@@ -66,6 +66,7 @@ class App extends Component {
         console.log(response.data);
         this.setState({ player: response.data });
         this.goToPlayer();
+        window.scrollTo(0, 0);
       });
   };
   handleClanClick = e => {
@@ -81,6 +82,7 @@ class App extends Component {
         console.log(response.data);
         this.setState({ clan: response.data });
         this.goToClan();
+        window.scrollTo(0, 0);
       });
   };
   goToPlayer = () => {

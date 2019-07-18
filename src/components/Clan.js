@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import ClanMembers from "./ClanMembers";
 class Clan extends Component {
   render() {
     let clan = this.props.clan;

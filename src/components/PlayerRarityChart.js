@@ -16,23 +16,23 @@ class PlayerRarityChart extends Component {
     this.setState({
       chartData: {
         labels: [
-          "Card Rarity"
-          // "Common"
-          // "Rare",
-          // "Epic",
-          // "Legendary"
+          // "Card Rarity",
+          "Common",
+          "Rare",
+          "Epic",
+          "Legendary"
           // "Average Rare Level",
           // "Average Epic Level",
           // "Average Legendary Level"
         ],
         datasets: [
           {
-            label: "Common",
+            label: "Average Card Level",
             data: [
-              this.getRarityData().common
-              // this.getRarityData().rare,
-              // this.getRarityData().epic,
-              // this.getRarityData().legendary
+              this.getRarityData().common,
+              this.getRarityData().rare,
+              this.getRarityData().epic,
+              this.getRarityData().legendary
             ],
             backgroundColor: [
               // "rgba(255, 99, 132, 0.6)",
@@ -44,22 +44,22 @@ class PlayerRarityChart extends Component {
               // "rgba(75, 192, 192, 0.6)"
               // "rgba(255, 99, 132, 1)"
             ]
-          },
-          {
-            label: "Rare",
-            data: [this.getRarityData().rare],
-            backgroundColor: "rgba(255, 159, 64, .8)"
-          },
-          {
-            label: "Epic",
-            data: [this.getRarityData().epic],
-            backgroundColor: "rgba(153, 102, 255, .8)"
-          },
-          {
-            label: "Legendary",
-            data: [this.getRarityData().legendary],
-            backgroundColor: "rgba(255, 206, 86, .8)"
           }
+          // {
+          //   label: "Rare",
+          //   data: [this.getRarityData().rare],
+          //   backgroundColor: "rgba(255, 159, 64, .8)"
+          // },
+          // {
+          //   label: "Epic",
+          //   data: [this.getRarityData().epic],
+          //   backgroundColor: "rgba(153, 102, 255, .8)"
+          // },
+          // {
+          //   label: "Legendary",
+          //   data: [this.getRarityData().legendary],
+          //   backgroundColor: "rgba(255, 206, 86, .8)"
+          // }
         ]
       }
     });
@@ -108,12 +108,17 @@ class PlayerRarityChart extends Component {
           options={{
             title: {
               display: true,
-              text: "Card Rarity Statistics",
+              text: "Average Card Level By Rarity",
               fontSize: 18,
               fontFamily: "Supercell",
               fontColor: "#555555"
             },
-            legend: { position: "bottom" },
+            legend: { display: false },
+            // legend: {
+            //   labels: {
+            //     fontColor: "white",
+            //     fontSize: 18
+            //   }
             responsive: true,
             scales: {
               yAxes: [
