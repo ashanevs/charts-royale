@@ -16,30 +16,49 @@ class PlayerRarityChart extends Component {
     this.setState({
       chartData: {
         labels: [
-          "Average Common Level",
-          "Average Rare Level",
-          "Average Epic Level",
-          "Average Legendary Level"
+          "Card Rarity"
+          // "Common"
+          // "Rare",
+          // "Epic",
+          // "Legendary"
+          // "Average Rare Level",
+          // "Average Epic Level",
+          // "Average Legendary Level"
         ],
         datasets: [
           {
-            label: "Average Card Level",
+            label: "Common",
             data: [
-              this.getRarityData().common,
-              this.getRarityData().rare,
-              this.getRarityData().epic,
-              this.getRarityData().legendary
+              this.getRarityData().common
+              // this.getRarityData().rare,
+              // this.getRarityData().epic,
+              // this.getRarityData().legendary
             ],
             backgroundColor: [
               // "rgba(255, 99, 132, 0.6)",
-              "rgba(54, 162, 235, 0.6)",
-              "rgba(255, 159, 64, 0.6)",
+              "rgba(54, 162, 235, .8)",
+              "rgba(255, 159, 64, .8)",
 
-              "rgba(153, 102, 255, 0.6)",
-              "rgba(255, 206, 86, 0.6)",
-              "rgba(75, 192, 192, 0.6)"
+              "rgba(153, 102, 255, .8)",
+              "rgba(255, 206, 86, .8)"
+              // "rgba(75, 192, 192, 0.6)"
               // "rgba(255, 99, 132, 1)"
             ]
+          },
+          {
+            label: "Rare",
+            data: [this.getRarityData().rare],
+            backgroundColor: "rgba(255, 159, 64, .8)"
+          },
+          {
+            label: "Epic",
+            data: [this.getRarityData().epic],
+            backgroundColor: "rgba(153, 102, 255, .8)"
+          },
+          {
+            label: "Legendary",
+            data: [this.getRarityData().legendary],
+            backgroundColor: "rgba(255, 206, 86, .8)"
           }
         ]
       }
@@ -80,12 +99,12 @@ class PlayerRarityChart extends Component {
 
   render() {
     return (
-      <div>
+      <div className="chart">
         {" "}
         <Bar
           data={this.state.chartData}
-          width={200}
-          height={50}
+          // width={100}
+          // height={50}
           options={{
             title: {
               display: true,
@@ -94,6 +113,8 @@ class PlayerRarityChart extends Component {
               fontFamily: "Supercell",
               fontColor: "#555555"
             },
+            legend: { position: "bottom" },
+            responsive: true,
             scales: {
               yAxes: [
                 {

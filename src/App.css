@@ -77,3 +77,6 @@ form {
 .clan-name {
   cursor: pointer;
 }
+.chart {
+  width: 50%;
+}

@@ -22,9 +22,10 @@ class Clan extends Component {
           <h2>
             name: <span className="gold">{clan.name}</span>
           </h2>
-          <h3>
+          {/* <h3>
             description: <span>{clan.description}</span>
-          </h3>
+          </h3> */}
+          <h3>Members</h3>
         </div>
         <div className="member-list-container">{list}</div>
       </div>
