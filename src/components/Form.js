@@ -12,12 +12,14 @@ class Form extends Component {
           className="player-searchbar"
           onChange={this.props.changeHandler}
         />
-        <input
+        <button
           type="submit"
           value="Submit"
           className="submit-button"
           onClick={this.props.handlePlayerSearch}
-        />
+        >
+          Submit
+        </button>
       </form>
     );
   }

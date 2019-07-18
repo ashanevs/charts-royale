@@ -5,7 +5,7 @@ import PlayerRarityChart from "./PlayerRarityChart";
 
 class Player extends Component {
   render() {
-    let player = this.props.player.data;
+    let player = this.props.player;
     return (
       <div>
         <div className="name-and-clan-container">

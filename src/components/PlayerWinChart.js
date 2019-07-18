@@ -12,17 +12,14 @@ class PlayerWinChart extends Component {
     this.getChartData();
   };
   getChartData = () => {
+    let player = this.props.player;
     this.setState({
       chartData: {
         labels: ["Wins", "Losses", "Draws"],
         datasets: [
           {
             label: "Ladder Match Statistics",
-            data: [
-              this.props.player.data.games.wins,
-              this.props.player.data.games.losses,
-              this.props.player.data.games.draws
-            ],
+            data: [player.games.wins, player.games.losses, player.games.draws],
             backgroundColor: [
               // "rgba(255, 99, 132, 0.6)",
               // "rgba(54, 162, 235, 0.6)",

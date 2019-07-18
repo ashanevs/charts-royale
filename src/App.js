@@ -30,7 +30,7 @@ class App extends Component {
         }
       })
       .then(response => {
-        this.setState({ player: response });
+        this.setState({ player: response.data });
         this.goToPlayer();
       });
   };
@@ -47,7 +47,7 @@ class App extends Component {
             path="/search"
             render={props => (
               <Form
-                player={this.state.player}
+                // player={this.state.player}
                 changeHandler={this.changeHandler}
                 handlePlayerSearch={this.handlePlayerSearch}
                 {...props}

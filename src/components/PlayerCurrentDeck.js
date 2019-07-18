@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class PlayerCurrentDeck extends Component {
   render() {
-    let player = this.props.player.data;
+    let player = this.props.player;
     let list = player.currentDeck.map((item, index) => {
       return (
         <div className="current-deck-card-container" key={index}>

@@ -40,10 +40,10 @@
   text-align: left;
   padding: 0px 10px;
 }
-input[type="submit"] {
-  -webkit-appearance: none;
+button {
   padding: 10px;
 }
+
 form {
   display: flex;
   flex-direction: column;
