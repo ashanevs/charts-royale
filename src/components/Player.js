@@ -17,7 +17,7 @@ class Player extends Component {
           </h2>
         </div>
         <PlayerWinChart player={this.props.player} />
-        {/* <PlayerRarityChart player={this.props.player} /> */}
+        <PlayerRarityChart player={this.props.player} />
         <PlayerCurrentDeck player={this.props.player} />
       </div>
     );

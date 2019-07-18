@@ -30,6 +30,7 @@ class App extends Component {
         }
       })
       .then(response => {
+        console.log(response.data);
         this.setState({ player: response.data });
         this.goToPlayer();
       });
