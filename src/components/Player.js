@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import PlayerWinChart from "./PlayerWinChart";
 import PlayerCurrentDeck from "./PlayerCurrentDeck";
+import PlayerRarityChart from "./PlayerRarityChart";
 
 class Player extends Component {
   render() {
     let player = this.props.player.data;
-    // let list = player.currentDeck.map((item, index) => {
-    //   return (
-    //     <div key={index}>
-    //       {item.name}
-    //       <img src={item.icon} />
-    //     </div>
-    //   );
-    // });
     return (
       <div>
-        <h1>{player.name}</h1>
-        <h2>{player.clan.name}</h2>
+        <div className="name-and-clan-container">
+          <h2>
+            name: <span className="gold">{player.name}</span>
+          </h2>
+          <h2>
+            clan: <span className="gold">{player.clan.name}</span>
+          </h2>
+        </div>
         <PlayerWinChart player={this.props.player} />
+        {/* <PlayerRarityChart player={this.props.player} /> */}
         <PlayerCurrentDeck player={this.props.player} />
       </div>
     );

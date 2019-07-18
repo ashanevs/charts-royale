@@ -7,13 +7,14 @@ class PlayerCurrentDeck extends Component {
       return (
         <div className="current-deck-card-container" key={index}>
           <h3>{item.name}</h3>
+          <h3>Level {item.displayLevel}</h3>
           <img src={item.icon} className="card-icon" alt="card-icon" />
         </div>
       );
     });
     return (
       <div className="current-deck-container">
-        <h2>Current Deck</h2>
+        <h2 className="gold">Current Deck</h2>
         <div className="current-deck-card-list">{list}</div>
       </div>
     );

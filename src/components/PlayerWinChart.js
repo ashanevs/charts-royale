@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Pie } from "react-chartjs-2";
+import { Pie, Doughnut } from "react-chartjs-2";
 
 class PlayerWinChart extends Component {
   constructor(props) {
@@ -48,7 +48,9 @@ class PlayerWinChart extends Component {
             title: {
               display: true,
               text: "Ladder Match Statistics",
-              fontSize: 25
+              fontSize: 18,
+              fontFamily: "Supercell",
+              fontColor: "#555555"
             }
           }}
         />

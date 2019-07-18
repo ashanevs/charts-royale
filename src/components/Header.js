@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Header extends Component {
   render() {
     return (
-      <div className="header-container">
+      <div className="header-container gold">
         <Link to="/">
           <h1>Charts Royale</h1>
         </Link>

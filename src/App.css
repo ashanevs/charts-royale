@@ -17,21 +17,49 @@
   display: flex;
   /* width: 90%; */
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 .card-icon {
   width: 100px;
-  margin: 5px 0px;
+  margin: 10px;
 }
 .current-deck-container {
-  margin-top: 20px;
+  margin: 20px auto;
   border: 2px solid black;
   border-radius: 3px;
   width: 90%;
+  padding: 10px 0px;
+  font-size: 10px;
 }
 .header-container {
-  background: -webkit-linear-gradient(#b4624b, #ffba58);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   padding: 20px 0px;
-  font-size: 40px;
+  font-size: 26px;
+}
+.player-searchbar {
+  height: 30px;
+  text-align: left;
+  padding: 0px 10px;
+}
+input[type="submit"] {
+  -webkit-appearance: none;
+  padding: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  justify-content: space-around;
+}
+.name-and-clan-container {
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+}
+.gold {
+  background: linear-gradient(#b4624b, #ffba58);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
