@@ -92,4 +92,15 @@ input {
     width: 90%;
     /* margin: 0px 2px; */
   }
+  button {
+    border: 2px solid;
+    border-radius: 5px;
+    background: white;
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

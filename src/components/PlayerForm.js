@@ -6,7 +6,7 @@ class PlayerForm extends Component {
       <form>
         Search for a player by clan tag (e.g. 208RRCYGL)
         <input
-          type="tag"
+          type="text"
           name="tag"
           placeholder="Player tag..."
           className="player-searchbar"
