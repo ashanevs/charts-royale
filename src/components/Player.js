@@ -12,8 +12,11 @@ class Player extends Component {
           <h2>
             name: <span className="gold">{player.name}</span>
           </h2>
-          <h2>
-            clan: <span className="gold">{player.clan.name}</span>
+          <h2 onClick={this.props.handleClanClick}>
+            clan:{" "}
+            <span id={player.clan.tag} className="clan-name gold">
+              {player.clan.name}
+            </span>
           </h2>
         </div>
         <PlayerWinChart player={this.props.player} />

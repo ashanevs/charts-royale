@@ -93,6 +93,16 @@ class PlayerRarityChart extends Component {
               fontSize: 18,
               fontFamily: "Supercell",
               fontColor: "#555555"
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    max: 13,
+                    min: 9
+                  }
+                }
+              ]
             }
           }}
         />

@@ -50,16 +50,30 @@ form {
   height: 150px;
   justify-content: space-around;
 }
-.name-and-clan-container {
+.name-and-clan-container,
+.clan-container {
   margin-bottom: 10px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100px;
+  height: 120px;
 }
 .gold {
   background: linear-gradient(#b4624b, #ffba58);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.member-list-container {
+  display: flex;
+  width: 30%;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.member {
+  cursor: pointer;
+  margin: 5px 0px;
+}
+.clan-name {
+  cursor: pointer;
 }

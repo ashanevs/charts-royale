@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-class Form extends Component {
+class ClanForm extends Component {
   render() {
     return (
       <form>
-        Search for a player by clan tag (e.g. 208RRCYGL)
+        Search for a clan by tag (e.g. JG090GV)
         <input
           type="tag"
           name="tag"
-          placeholder="Player tag..."
+          placeholder="Clan tag..."
           className="player-searchbar"
           onChange={this.props.changeHandler}
         />
@@ -16,7 +16,7 @@ class Form extends Component {
           type="submit"
           value="Submit"
           className="submit-button"
-          onClick={this.props.handlePlayerSearch}
+          onClick={this.props.handleClanSearch}
         >
           Submit
         </button>
@@ -25,4 +25,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default ClanForm;
