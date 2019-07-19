@@ -28,8 +28,8 @@ class ClanHistoryChart extends Component {
       });
   };
   getChartData = () => {
-    let whatever = Object.values(this.state.clanHistory);
-    let ok = whatever.map(item => {
+    let clanHistoryValues = Object.values(this.state.clanHistory);
+    let clanHistoryScores = clanHistoryValues.map(item => {
       return item.score;
     });
     this.setState({
@@ -38,7 +38,7 @@ class ClanHistoryChart extends Component {
         datasets: [
           {
             label: "Clan Score History",
-            data: ok,
+            data: clanHistoryScores,
             backgroundColor: [
               // "rgba(255, 99, 132, 0.6)",
               // "rgba(54, 162, 235, 0.6)",
