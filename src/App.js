@@ -9,6 +9,8 @@ import Player from "./components/Player";
 import Clan from "./components/Clan";
 import Header from "./components/Header";
 
+const authToken =
+  "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo";
 class App extends Component {
   constructor() {
     super();
@@ -28,8 +30,7 @@ class App extends Component {
     axios
       .get("https://api.royaleapi.com/player/" + this.state.tag, {
         headers: {
-          Authorization:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
+          Authorization: authToken
         }
       })
       .then(response => {
@@ -43,8 +44,7 @@ class App extends Component {
     axios
       .get("https://api.royaleapi.com/clan/" + this.state.tag, {
         headers: {
-          Authorization:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
+          Authorization: authToken
         }
       })
       .then(response => {
@@ -58,8 +58,7 @@ class App extends Component {
     axios
       .get("https://api.royaleapi.com/player/" + e.target.id, {
         headers: {
-          Authorization:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
+          Authorization: authToken
         }
       })
       .then(response => {

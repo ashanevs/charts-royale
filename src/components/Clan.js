@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ClanMembers from "./ClanMembers";
+import ClanHistoryChart from "./ClanHistoryChart";
 class Clan extends Component {
   constructor() {
     super();
@@ -7,6 +8,14 @@ class Clan extends Component {
       viewMembers: false
     };
   }
+  handleClick = e => {
+    e.preventDefault();
+    if (!this.state.viewMembers) {
+      this.setState({ viewMembers: true });
+    } else {
+      this.setState({ viewMembers: false });
+    }
+  };
   render() {
     let clan = this.props.clan;
     return (
@@ -15,13 +24,26 @@ class Clan extends Component {
           <h2>
             name: <span className="gold">{clan.name}</span>
           </h2>
-          <h3>Members</h3>
+          <h3 onClick={this.handleClick} className="member-selector gold">
+            View Members
+          </h3>
         </div>
-        {/* <div className="member-list-container">{list}</div> */}
-        <ClanMembers
-          clan={clan}
-          handleMemberClick={this.props.handleMemberClick}
-        />
+        {!this.state.viewMembers ? (
+          <ClanHistoryChart
+            clan={clan}
+            handleMemberClick={this.props.handleMemberClick}
+          />
+        ) : (
+          " "
+        )}
+        {this.state.viewMembers ? (
+          <ClanMembers
+            clan={clan}
+            handleMemberClick={this.props.handleMemberClick}
+          />
+        ) : (
+          " "
+        )}
       </div>
     );
   }

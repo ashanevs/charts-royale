@@ -5,9 +5,9 @@ class ClanMembers extends Component {
     let clan = this.props.clan;
     let list = clan.members.map((item, index) => {
       return (
-        <div className="gold" key={index}>
+        <div key={index}>
           <h2
-            className="member"
+            className="gold member"
             id={item.tag}
             onClick={this.props.handleMemberClick}
           >
@@ -16,7 +16,7 @@ class ClanMembers extends Component {
         </div>
       );
     });
-    return <div>{list}</div>;
+    return <div className="member-list-container">{list}</div>;
   }
 }
 
