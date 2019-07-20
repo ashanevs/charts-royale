@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ClanMembers from "./ClanMembers";
 import ClanHistoryChart from "./ClanHistoryChart";
+import { Link } from "react-router-dom";
 class Clan extends Component {
   constructor() {
     super();
@@ -18,17 +19,29 @@ class Clan extends Component {
   };
   render() {
     let clan = this.props.clan;
+    let clanCheck = this.props.clan.name;
     return (
       <div>
-        <div className="clan-container">
-          <h2>
-            name: <span className="gold">{clan.name}</span>
-          </h2>
-          <h3 onClick={this.handleClick} className="member-selector gold">
-            View Members
-          </h3>
-        </div>
-        {!this.state.viewMembers ? (
+        {clanCheck ? (
+          <div className="clan-container">
+            <h2>
+              name: <span className="gold">{clan.name}</span>
+            </h2>
+            <h3 onClick={this.handleClick} className="member-selector gold">
+              View Members
+            </h3>
+          </div>
+        ) : (
+          ""
+        )}
+        {!clanCheck ? (
+          <Link to="/">
+            <h3>Head home to search for a clan!</h3>
+          </Link>
+        ) : (
+          ""
+        )}
+        {!this.state.viewMembers && clanCheck ? (
           <ClanHistoryChart
             clan={clan}
             handleMemberClick={this.props.handleMemberClick}
@@ -36,7 +49,7 @@ class Clan extends Component {
         ) : (
           " "
         )}
-        {this.state.viewMembers ? (
+        {this.state.viewMembers && clanCheck ? (
           <ClanMembers
             clan={clan}
             handleMemberClick={this.props.handleMemberClick}
