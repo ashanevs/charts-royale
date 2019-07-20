@@ -9,7 +9,7 @@ class PlayerRarityChart extends Component {
       rarityData: {}
     };
   }
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.getChartData();
   };
   getChartData = () => {
@@ -103,8 +103,8 @@ class PlayerRarityChart extends Component {
         {" "}
         <Bar
           data={this.state.chartData}
-          // width={100}
-          // height={50}
+          width={200}
+          height={150}
           options={{
             title: {
               display: true,

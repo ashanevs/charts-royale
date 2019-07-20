@@ -10,8 +10,8 @@
   color: #555555;
 }
 .app-container {
-  /* background-image: url(/clash-background.png); */
   height: 100vh;
+  /* background-image: url(/clash-background.png); */
 }
 .current-deck-card-list {
   display: flex;
@@ -48,8 +48,12 @@ button {
 form {
   display: flex;
   flex-direction: column;
-  height: 150px;
   justify-content: space-around;
+  border: 2px solid #444444;
+  border-radius: 5px;
+  width: 60%;
+  height: 200px;
+  margin: 10px auto;
 }
 input {
   border: 2px solid #444444;

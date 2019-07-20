@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
 
-class ClanHistoryChart extends Component {
+class ClanWarChart extends Component {
   constructor() {
     super();
     this.state = {
-      clanHistory: {},
+      clanWarData: {},
       chartData: {}
     };
   }
-  componentDidMount = () => {
+  componentWillMount = () => {
     axios
       .get(
-        "https://api.royaleapi.com/clan/" + this.props.clan.tag + "/history",
+        "https://api.royaleapi.com/clan/" + this.props.clan.tag + "/warlogs",
         {
           headers: {
             Authorization:
@@ -23,21 +23,21 @@ class ClanHistoryChart extends Component {
       )
       .then(response => {
         console.log(response.data);
-        this.setState({ clanHistory: response.data });
+        this.setState({ clanWarData: response.data });
         this.getChartData();
       });
   };
   getChartData = () => {
-    let clanHistoryValues = Object.values(this.state.clanHistory);
-    let clanHistoryScores = clanHistoryValues.map(item => {
-      return item.score;
-    });
+    // let clanHistoryValues = Object.values(this.state.clanHistory);
+    // let clanHistoryScores = clanHistoryValues.map(item => {
+    //   return item.score;
+    // });
     this.setState({
       chartData: {
-        labels: Object.keys(this.state.clanHistory),
+        labels: ["Participants, Wins"],
         datasets: [
           {
-            label: "Clan Score",
+            label: "War History",
             data: clanHistoryScores,
             backgroundColor: [
               // "rgba(255, 99, 132, 0.6)",
@@ -78,4 +78,4 @@ class ClanHistoryChart extends Component {
   }
 }
 
-export default ClanHistoryChart;
+export default ClanWarChart;

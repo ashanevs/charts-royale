@@ -8,7 +8,7 @@ class PlayerWinChart extends Component {
       chartData: {}
     };
   }
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.getChartData();
   };
   getChartData = () => {
@@ -39,8 +39,8 @@ class PlayerWinChart extends Component {
       <div className="chart">
         <Pie
           data={this.state.chartData}
-          // width={200}
-          // height={150}
+          width={200}
+          height={150}
           options={{
             title: {
               display: true,
