@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <div className="header-container gold">
         <Link to="/">
-          <h1>Charts Royale</h1>
+          <h1 onClick={this.props.handleLogoClick}>Charts Royale</h1>
         </Link>
       </div>
     );

@@ -94,6 +94,11 @@ class App extends Component {
         window.scrollTo(0, 0);
       });
   };
+  handleLogoClick = () => {
+    if (this.state.about) {
+      this.setState({ about: false });
+    }
+  };
   goToPlayer = () => {
     this.props.history.push("/player");
   };
@@ -103,7 +108,7 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <Header />
+        <Header handleLogoClick={this.handleLogoClick} />
         <Route exact path="/" render={() => <Redirect to="/search" />} />
         <Switch>
           <Route
