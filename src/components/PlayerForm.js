@@ -13,7 +13,7 @@ class PlayerForm extends Component {
     e.preventDefault();
     console.log(e);
     this.setState({ loading: true });
-    setTimeout(this.componentWillMount, 6000);
+    setTimeout(this.componentWillMount, 8000);
     func(e);
   };
   render() {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ClanMembers from "./ClanMembers";
 import ClanHistoryChart from "./ClanHistoryChart";
+import ClanWarChart from "./ClanWarChart";
 import { Link } from "react-router-dom";
 class Clan extends Component {
   constructor() {
@@ -44,6 +45,11 @@ class Clan extends Component {
           </h3>
         ) : (
           ""
+        )}
+        {!this.state.viewMembers && clanCheck ? (
+          <ClanWarChart clan={clan} />
+        ) : (
+          " "
         )}
         {!this.state.viewMembers && clanCheck ? (
           <ClanHistoryChart

@@ -7,13 +7,13 @@ class ClanForm extends Component {
       loading: false
     };
   }
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.setState({ loading: false });
   };
   showLoadingWheel = (e, func = this.props.handleClanSearch) => {
     e.preventDefault();
     this.setState({ loading: true });
-    setTimeout(this.componentWillMount, 6000);
+    setTimeout(this.componentDidMount, 8000);
     func(e);
   };
   render() {
