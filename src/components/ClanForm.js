@@ -1,6 +1,21 @@
 import React, { Component } from "react";
 
 class ClanForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: false
+    };
+  }
+  componentDidMount = () => {
+    this.setState({ loading: false });
+  };
+  showLoadingWheel = (e, func = this.props.handleClanSearch) => {
+    e.preventDefault();
+    this.setState({ loading: true });
+    func(e);
+    setTimeout(this.componentDidMount, 6000);
+  };
   render() {
     return (
       <form>
@@ -12,14 +27,18 @@ class ClanForm extends Component {
           className="player-searchbar"
           onChange={this.props.changeHandler}
         />
-        <button
-          type="submit"
-          value="Submit"
-          className="submit-button"
-          onClick={this.props.handleClanSearch}
-        >
-          Submit
-        </button>
+        {!this.state.loading ? (
+          <button
+            type="submit"
+            value="Submit"
+            className="submit-button"
+            onClick={this.showLoadingWheel}
+          >
+            Submit
+          </button>
+        ) : (
+          <img className="loading-gif" src="loading-wheel.gif" alt="loading" />
+        )}
       </form>
     );
   }

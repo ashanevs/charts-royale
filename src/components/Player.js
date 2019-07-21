@@ -29,9 +29,9 @@ class Player extends Component {
         {playerCheck ? <PlayerRarityChart player={this.props.player} /> : ""}
         {playerCheck ? <PlayerCurrentDeck player={this.props.player} /> : ""}
         {!playerCheck ? (
-          <Link to="/">
-            <h3>Head home to search for a player!</h3>
-          </Link>
+          <h3>
+            Return <Link to="/">home </Link> to search for a player!
+          </h3>
         ) : (
           ""
         )}

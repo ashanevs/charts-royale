@@ -6,15 +6,21 @@ class PlayerForm extends Component {
       loading: false
     };
   }
-  showLoadingWheel = e => {
+  componentDidMount = () => {
+    this.setState({ loading: false });
+  };
+  showLoadingWheel = (e, func = this.props.handlePlayerSearch) => {
     e.preventDefault();
+    console.log(e);
     this.setState({ loading: true });
+    func(e);
+    setTimeout(this.componentDidMount, 6000);
   };
   render() {
     return (
       <form>
         Search for a player by tag (e.g. 208RRCYGL)
-        {this.state.loading ? <img src="loading-wheel.gif" /> : ""}
+        {/* {this.state.loading ? <img src="loading-wheel.gif" /> : ""} */}
         <input
           type="text"
           name="tag"
@@ -22,15 +28,20 @@ class PlayerForm extends Component {
           className="player-searchbar"
           onChange={this.props.changeHandler}
         />
-        <button
-          type="submit"
-          value="Submit"
-          className="submit-button"
-          // onClick={this.props.handlePlayerSearch}
-          onClick={(this.showLoadingWheel, this.props.handlePlayerSearch)}
-        >
-          Submit
-        </button>
+        {!this.state.loading ? (
+          <button
+            type="submit"
+            value="Submit"
+            className="submit-button"
+            // onClick={this.props.handlePlayerSearch}
+            onClick={this.showLoadingWheel}
+          >
+            {" "}
+            Submit
+          </button>
+        ) : (
+          <img className="loading-gif" src="loading-wheel.gif" alt="loading" />
+        )}
       </form>
     );
   }

@@ -91,6 +91,9 @@ input {
   width: 50%;
   margin: 20px auto;
 }
+.loading-gif {
+  width: 40px;
+}
 
 @media all and (max-width: 480px) {
   .chart {
