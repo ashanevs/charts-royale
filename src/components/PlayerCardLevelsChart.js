@@ -13,7 +13,6 @@ class PlayerCardLevelsChart extends Component {
   };
   getChartData = () => {
     let player = this.props.player;
-    console.log(player);
     let playerCardLevels = {
       level1: 0,
       level2: 0,
