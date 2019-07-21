@@ -11,7 +11,7 @@ class TopPlayer extends Component {
     return (
       <div>
         {playerCheck ? (
-          <div className="name-and-clan-container">
+          <div className="name-and-clan-container fade">
             <h2>
               name: <span className="gold">{player.name}</span>
             </h2>

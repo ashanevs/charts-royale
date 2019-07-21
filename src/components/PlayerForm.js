@@ -17,7 +17,7 @@ class PlayerForm extends Component {
   };
   render() {
     return (
-      <form>
+      <form className="fade">
         Search for a player by tag (e.g. 208RRCYGL)
         {/* {this.state.loading ? <img src="loading-wheel.gif" /> : ""} */}
         <input

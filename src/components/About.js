@@ -5,7 +5,7 @@ class About extends Component {
     return (
       <div>
         {this.props.showAbout ? (
-          <div>
+          <div className="fade">
             <p className="about-paragraph">
               <span className="gold">Charts Royale</span> was created as a data
               visualization tool for the mobile game Clash Royale. It utilizes

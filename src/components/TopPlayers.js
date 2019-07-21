@@ -15,7 +15,7 @@ class TopPlayers extends Component {
         return (
           <div key={index}>
             <h2
-              className="gold member"
+              className="gold member fade"
               id={item.tag}
               onClick={this.props.handleMemberClick}
             >
@@ -27,7 +27,7 @@ class TopPlayers extends Component {
       return <div className="member-list-container">{list}</div>;
     } else
       return (
-        <h3>
+        <h3 className="fade">
           Return{" "}
           <Link to="/" className="gold">
             home

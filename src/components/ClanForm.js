@@ -18,7 +18,7 @@ class ClanForm extends Component {
   };
   render() {
     return (
-      <form>
+      <form className="fade">
         Search for a clan by tag (e.g. JG090GV)
         <input
           type="tag"
