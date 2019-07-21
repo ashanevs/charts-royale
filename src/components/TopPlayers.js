@@ -17,7 +17,7 @@ class TopPlayers extends Component {
             <h2
               className="gold member fade"
               id={item.tag}
-              onClick={this.props.handleMemberClick}
+              onClick={this.props.handleTopPlayerClick}
             >
               {item.name}
             </h2>

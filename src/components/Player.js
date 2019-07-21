@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PlayerWinChart from "./PlayerWinChart";
 import PlayerCurrentDeck from "./PlayerCurrentDeck";
 import PlayerRarityChart from "./PlayerRarityChart";
+import PlayerCardLevelsChart from "./PlayerCardLevelsChart";
 
 class Player extends Component {
   render() {
@@ -27,6 +28,11 @@ class Player extends Component {
         )}
         {playerCheck ? <PlayerWinChart player={this.props.player} /> : ""}
         {playerCheck ? <PlayerRarityChart player={this.props.player} /> : ""}
+        {playerCheck ? (
+          <PlayerCardLevelsChart player={this.props.player} />
+        ) : (
+          ""
+        )}
         {playerCheck ? <PlayerCurrentDeck player={this.props.player} /> : ""}
         {!playerCheck ? (
           <h3>

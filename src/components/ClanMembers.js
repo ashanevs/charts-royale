@@ -7,7 +7,7 @@ class ClanMembers extends Component {
       return (
         <div key={index}>
           <h2
-            className="gold member"
+            className="gold member fade"
             id={item.tag}
             onClick={this.props.handleMemberClick}
           >

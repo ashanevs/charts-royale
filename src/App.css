@@ -21,8 +21,11 @@
   flex-wrap: wrap;
 }
 .card-icon {
-  width: 100px;
-  margin: 20px;
+  width: 50px;
+  margin: 10px 0px 0px 0px;
+}
+.current-deck-card-container {
+  width: 160px;
 }
 .current-deck-container {
   /* display: flex;

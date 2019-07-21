@@ -221,7 +221,7 @@ class App extends Component {
             path="/topplayers"
             render={props => (
               <TopPlayers
-                handleMemberClick={this.handleTopPlayerClick}
+                handleTopPlayerClick={this.handleTopPlayerClick}
                 topplayers={this.state.topplayers}
                 about={this.state.about}
               />
@@ -229,12 +229,7 @@ class App extends Component {
           />
           <Route
             path="/topplayer"
-            render={props => (
-              <TopPlayer
-                handleTopPlayerClick={this.handleTopPlayerClick}
-                player={this.state.player}
-              />
-            )}
+            render={props => <TopPlayer player={this.state.player} />}
           />
         </Switch>
       </div>
