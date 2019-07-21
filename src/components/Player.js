@@ -31,7 +31,7 @@ class Player extends Component {
         {!playerCheck ? (
           <h3>
             Return{" "}
-            <Link to="/" className="gold">
+            <Link to="/" className="gold fade">
               home{" "}
             </Link>{" "}
             to search for a player!
