@@ -8,6 +8,7 @@ import ClanForm from "./components/ClanForm";
 import Player from "./components/Player";
 import Clan from "./components/Clan";
 import Header from "./components/Header";
+import About from "./components/About";
 
 const authToken =
   "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo";
@@ -17,13 +18,25 @@ class App extends Component {
     this.state = {
       tag: "",
       player: {},
-      clan: {}
+      clan: {},
+      about: false
     };
   }
+  componentDidMount = () => {
+    this.setState({ tag: "", player: {}, clan: {} });
+  };
   changeHandler = e => {
     this.setState({
       tag: e.target.value
     });
+  };
+  handleAboutClick = e => {
+    e.preventDefault();
+    if (!this.state.about) {
+      this.setState({ about: true });
+    } else {
+      this.setState({ about: false });
+    }
   };
   handlePlayerSearch = e => {
     e.preventDefault();
@@ -100,18 +113,30 @@ class App extends Component {
             path="/search"
             render={props => (
               <div>
-                <PlayerForm
-                  // player={this.state.player}
-                  changeHandler={this.changeHandler}
-                  handlePlayerSearch={this.handlePlayerSearch}
-                  {...props}
-                />
-                <ClanForm
-                  // player={this.state.player}
-                  changeHandler={this.changeHandler}
-                  handleClanSearch={this.handleClanSearch}
-                  {...props}
-                />
+                <h2 className="gold about-link" onClick={this.handleAboutClick}>
+                  About
+                </h2>
+                <About showAbout={this.state.about} />
+                {!this.state.about ? (
+                  <PlayerForm
+                    // player={this.state.player}
+                    changeHandler={this.changeHandler}
+                    handlePlayerSearch={this.handlePlayerSearch}
+                    {...props}
+                  />
+                ) : (
+                  ""
+                )}
+                {!this.state.about ? (
+                  <ClanForm
+                    // player={this.state.player}
+                    changeHandler={this.changeHandler}
+                    handleClanSearch={this.handleClanSearch}
+                    {...props}
+                  />
+                ) : (
+                  ""
+                )}
               </div>
             )}
           />
