@@ -45,25 +45,13 @@ class ClanWarChart extends Component {
           {
             label: "Number of Participants",
             data: participantCountArray,
-            backgroundColor:
-              // "rgba(255, 99, 132, 0.6)",
-              // "rgba(54, 162, 235, 0.6)",
-              // "rgba(255, 206, 86, 0.6)",
-              "rgba(75, 192, 192, 0.6)"
-            // "rgba(153, 102, 255, 0.6)"
-            // "rgba(255, 159, 64, 0.6)",
-            // "rgba(255, 99, 132, 0.6)"
+            backgroundColor: "rgba(75, 192, 192, 0.6)"
           },
           {
             label: "Number of Wins",
             data: winCountArray,
             backgroundColor: "rgba(153, 102, 255, .8)"
           }
-          // {
-          //   label: "Legendary",
-          //   data: [this.getRarityData().legendary],
-          //   backgroundColor: "rgba(255, 206, 86, .8)"
-          // }
         ]
       }
     });

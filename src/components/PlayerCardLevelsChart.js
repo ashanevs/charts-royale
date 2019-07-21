@@ -60,6 +60,7 @@ class PlayerCardLevelsChart extends Component {
     this.setState({
       chartData: {
         labels: [
+          // Levels 1-8 left out deliberately although available if desired
           // "Level 1",
           // "Level 2",
           // "Level 3",
@@ -93,6 +94,7 @@ class PlayerCardLevelsChart extends Component {
               playerCardLevels.level13
             ],
             backgroundColor: [
+              // Extra colors for levels 1-8
               // "rgba 255, 255, 255, 0.6",
               // "rgba(255, 100, 0, 0.6)",
               // "rgba(0,0,139 ,0.6 )",

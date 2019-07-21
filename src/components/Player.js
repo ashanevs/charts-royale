@@ -71,14 +71,3 @@ class Player extends Component {
 }
 
 export default Player;
-
-// {
-//   !this.state.viewMembers ? (
-//     <ClanHistoryChart
-//       clan={clan}
-//       handleMemberClick={this.props.handleMemberClick}
-//     />
-//   ) : (
-//     " "
-//   )
-// }

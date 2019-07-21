@@ -149,7 +149,7 @@ class App extends Component {
               <div>
                 {!this.state.about ? (
                   <h2
-                    className="gold about-link bottom fade"
+                    className="gold about-link fade"
                     onClick={this.handleTopPlayersClick}
                   >
                     Top 50 Players{" "}
@@ -178,13 +178,13 @@ class App extends Component {
                 <About showAbout={this.state.about} />
                 {!this.state.about ? (
                   <h2
-                    className="gold about-link bottom fade"
+                    className="gold about-link fade"
                     onClick={this.handleAboutClick}
                   >
                     About
                   </h2>
                 ) : (
-                  <h2 className="bottom fade">
+                  <h2 className="fade">
                     Return to{" "}
                     <span
                       className="gold about-link"

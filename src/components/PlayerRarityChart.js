@@ -15,16 +15,7 @@ class PlayerRarityChart extends Component {
   getChartData = () => {
     this.setState({
       chartData: {
-        labels: [
-          // "Card Rarity",
-          "Common",
-          "Rare",
-          "Epic",
-          "Legendary"
-          // "Average Rare Level",
-          // "Average Epic Level",
-          // "Average Legendary Level"
-        ],
+        labels: ["Common", "Rare", "Epic", "Legendary"],
         datasets: [
           {
             label: "Average Card Level",
@@ -35,31 +26,12 @@ class PlayerRarityChart extends Component {
               this.getRarityData().legendary
             ],
             backgroundColor: [
-              // "rgba(255, 99, 132, 0.6)",
               "rgba(54, 162, 235, .8)",
               "rgba(255, 159, 64, .8)",
-
               "rgba(153, 102, 255, .8)",
               "rgba(255, 206, 86, .8)"
-              // "rgba(75, 192, 192, 0.6)"
-              // "rgba(255, 99, 132, 1)"
             ]
           }
-          // {
-          //   label: "Rare",
-          //   data: [this.getRarityData().rare],
-          //   backgroundColor: "rgba(255, 159, 64, .8)"
-          // },
-          // {
-          //   label: "Epic",
-          //   data: [this.getRarityData().epic],
-          //   backgroundColor: "rgba(153, 102, 255, .8)"
-          // },
-          // {
-          //   label: "Legendary",
-          //   data: [this.getRarityData().legendary],
-          //   backgroundColor: "rgba(255, 206, 86, .8)"
-          // }
         ]
       }
     });
@@ -114,11 +86,6 @@ class PlayerRarityChart extends Component {
               fontColor: "#555555"
             },
             legend: { display: false },
-            // legend: {
-            //   labels: {
-            //     fontColor: "white",
-            //     fontSize: 18
-            //   }
             responsive: true,
             scales: {
               yAxes: [
