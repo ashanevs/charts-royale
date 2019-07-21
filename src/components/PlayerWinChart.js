@@ -40,7 +40,7 @@ class PlayerWinChart extends Component {
         <Pie
           data={this.state.chartData}
           width={200}
-          height={150}
+          height={120}
           options={{
             title: {
               display: true,

@@ -10,8 +10,7 @@
   color: #555555;
 }
 .app-container {
-  height: 100vh;
-  /* background-image: url(/clash-background.png); */
+  /* height: 700px; */
 }
 .current-deck-card-list {
   display: flex;
@@ -111,7 +110,7 @@ input {
 }
 .chart {
   width: 50%;
-  margin: 20px auto;
+  margin: 40px auto;
 }
 .loading-gif {
   width: 40px;

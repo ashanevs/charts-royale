@@ -60,14 +60,14 @@ class PlayerCardLevelsChart extends Component {
     this.setState({
       chartData: {
         labels: [
-          "Level 1",
-          "Level 2",
-          "Level 3",
-          "Level 4",
-          "Level 5",
-          "Level 6",
-          "Level 7",
-          "Level 8",
+          // "Level 1",
+          // "Level 2",
+          // "Level 3",
+          // "Level 4",
+          // "Level 5",
+          // "Level 6",
+          // "Level 7",
+          // "Level 8",
           "Level 9",
           "Level 10",
           "Level 11",
@@ -76,16 +76,16 @@ class PlayerCardLevelsChart extends Component {
         ],
         datasets: [
           {
-            label: "Ladder Match Statistics",
+            label: "Total Cards By Level",
             data: [
-              playerCardLevels.level1,
-              playerCardLevels.level2,
-              playerCardLevels.level3,
-              playerCardLevels.level4,
-              playerCardLevels.level5,
-              playerCardLevels.level6,
-              playerCardLevels.level7,
-              playerCardLevels.level8,
+              // playerCardLevels.level1,
+              // playerCardLevels.level2,
+              // playerCardLevels.level3,
+              // playerCardLevels.level4,
+              // playerCardLevels.level5,
+              // playerCardLevels.level6,
+              // playerCardLevels.level7,
+              // playerCardLevels.level8,
               playerCardLevels.level9,
               playerCardLevels.level10,
               playerCardLevels.level11,
@@ -93,19 +93,20 @@ class PlayerCardLevelsChart extends Component {
               playerCardLevels.level13
             ],
             backgroundColor: [
-              "rgba 255, 255, 255, 0.6",
-              "rgba(255, 100, 0, 0.6)",
-              "rgba(0,0,139 ,0.6 )",
-              "rgba(242, 38, 19, 0.6)",
-              "rgba(46, 204, 113, 0.6)",
-              "rgba(192,192,192,0.6",
-              "rgba(0,100,0 ,0.6 )",
+              // "rgba 255, 255, 255, 0.6",
+              // "rgba(255, 100, 0, 0.6)",
+              // "rgba(0,0,139 ,0.6 )",
+              // "rgba(242, 38, 19, 0.6)",
+              // "rgba(46, 204, 113, 0.6)",
+              // "rgba(192,192,192,0.6",
+              // "rgba(0,100,0 ,0.6 )",
+              // "rgba(255, 159, 64, 0.6)",
               "rgba(255, 99, 132, 0.6)",
               "rgba(54, 162, 235, 0.6)",
               "rgba(255, 206, 86, 0.6)",
               "rgba(75, 192, 192, 0.6)",
               "rgba(153, 102, 255, 0.6)",
-              "rgba(255, 159, 64, 0.6)"
+              "rgba(255, 99, 132, 0.6)"
             ]
           }
         ]
@@ -118,7 +119,7 @@ class PlayerCardLevelsChart extends Component {
         <Doughnut
           data={this.state.chartData}
           width={200}
-          height={200}
+          height={170}
           options={{
             title: {
               display: true,
