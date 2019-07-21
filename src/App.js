@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, Link } from "react-router-dom";
 
 import PlayerForm from "./components/PlayerForm";
 import ClanForm from "./components/ClanForm";
@@ -9,6 +9,7 @@ import Player from "./components/Player";
 import Clan from "./components/Clan";
 import Header from "./components/Header";
 import About from "./components/About";
+import TopPlayers from "./components/TopPlayers";
 
 const authToken =
   "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo";
@@ -19,7 +20,8 @@ class App extends Component {
       tag: "",
       player: {},
       clan: {},
-      about: false
+      about: false,
+      topplayers: {}
     };
   }
   changeHandler = e => {
@@ -61,6 +63,21 @@ class App extends Component {
         this.goToClan();
       });
   };
+  handleTopPlayersClick = e => {
+    e.preventDefault();
+    axios
+      .get("https://api.royaleapi.com/top/players/", {
+        headers: {
+          Authorization:
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+        this.setState({ topplayers: response.data });
+        this.goToTopPlayers();
+      });
+  };
   handleMemberClick = e => {
     e.preventDefault();
     axios
@@ -80,8 +97,7 @@ class App extends Component {
     axios
       .get("https://api.royaleapi.com/clan/" + e.target.id, {
         headers: {
-          Authorization:
-            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
+          Authorization: authToken
         }
       })
       .then(response => {
@@ -101,6 +117,9 @@ class App extends Component {
   goToClan = () => {
     this.props.history.push("/clan");
   };
+  goToTopPlayers = () => {
+    this.props.history.push("/topplayers");
+  };
   render() {
     return (
       <div className="app-container">
@@ -111,6 +130,12 @@ class App extends Component {
             path="/search"
             render={props => (
               <div>
+                <h2
+                  className="gold about-link bottom"
+                  onClick={this.handleTopPlayersClick}
+                >
+                  Top Players{" "}
+                </h2>
                 {!this.state.about ? (
                   <PlayerForm
                     // player={this.state.player}
@@ -170,6 +195,15 @@ class App extends Component {
                 clan={this.state.clan}
                 handleMemberClick={this.handleMemberClick}
                 {...props}
+              />
+            )}
+          />
+          <Route
+            path="/topplayers"
+            render={props => (
+              <TopPlayers
+                handleMemberClick={this.handleMemberClick}
+                topplayers={this.state.topplayers}
               />
             )}
           />
