@@ -11,7 +11,6 @@ class PlayerForm extends Component {
   };
   showLoadingWheel = (e, func = this.props.handlePlayerSearch) => {
     e.preventDefault();
-    console.log(e);
     this.setState({ loading: true });
     setTimeout(this.componentWillMount, 8000);
     func(e);

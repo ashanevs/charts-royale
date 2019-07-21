@@ -22,7 +22,6 @@ class ClanWarChart extends Component {
         }
       )
       .then(response => {
-        console.log(response.data);
         this.setState({ clanWarData: response.data });
         this.getChartData();
       });
@@ -39,8 +38,6 @@ class ClanWarChart extends Component {
       }
       return counter;
     });
-    console.log(participantCountArray);
-    console.log(winCountArray);
     this.setState({
       chartData: {
         labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
@@ -73,7 +70,6 @@ class ClanWarChart extends Component {
   };
   render() {
     let dataCheck = Object.entries(this.state.chartData);
-    console.log(this.state.chartData);
     return (
       <div className="chart">
         {dataCheck.length > 0 ? (
