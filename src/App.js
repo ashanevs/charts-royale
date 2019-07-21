@@ -10,6 +10,7 @@ import Clan from "./components/Clan";
 import Header from "./components/Header";
 import About from "./components/About";
 import TopPlayers from "./components/TopPlayers";
+import TopPlayer from "./components/TopPlayer";
 
 const authToken =
   "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo";
@@ -78,6 +79,20 @@ class App extends Component {
         this.goToTopPlayers();
       });
   };
+  handleTopPlayerClick = e => {
+    e.preventDefault();
+    axios
+      .get("https://api.royaleapi.com/player/" + e.target.id, {
+        headers: {
+          Authorization: authToken
+        }
+      })
+      .then(response => {
+        this.setState({ player: response.data });
+        this.goToTopPlayer();
+        window.scrollTo(0, 0);
+      });
+  };
   handleMemberClick = e => {
     e.preventDefault();
     axios
@@ -120,6 +135,9 @@ class App extends Component {
   goToTopPlayers = () => {
     this.props.history.push("/topplayers");
   };
+  goToTopPlayer = () => {
+    this.props.history.push("/topplayer");
+  };
   render() {
     return (
       <div className="app-container">
@@ -130,12 +148,16 @@ class App extends Component {
             path="/search"
             render={props => (
               <div>
-                <h2
-                  className="gold about-link bottom"
-                  onClick={this.handleTopPlayersClick}
-                >
-                  Top Players{" "}
-                </h2>
+                {!this.state.about ? (
+                  <h2
+                    className="gold about-link bottom"
+                    onClick={this.handleTopPlayersClick}
+                  >
+                    Top Players{" "}
+                  </h2>
+                ) : (
+                  ""
+                )}
                 {!this.state.about ? (
                   <PlayerForm
                     // player={this.state.player}
@@ -202,8 +224,18 @@ class App extends Component {
             path="/topplayers"
             render={props => (
               <TopPlayers
-                handleMemberClick={this.handleMemberClick}
+                handleMemberClick={this.handleTopPlayerClick}
                 topplayers={this.state.topplayers}
+                about={this.state.about}
+              />
+            )}
+          />
+          <Route
+            path="/topplayer"
+            render={props => (
+              <TopPlayer
+                handleTopPlayerClick={this.handleTopPlayerClick}
+                player={this.state.player}
               />
             )}
           />

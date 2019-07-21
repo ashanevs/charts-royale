@@ -4,7 +4,7 @@ import PlayerWinChart from "./PlayerWinChart";
 import PlayerCurrentDeck from "./PlayerCurrentDeck";
 import PlayerRarityChart from "./PlayerRarityChart";
 
-class Player extends Component {
+class TopPlayer extends Component {
   render() {
     let player = this.props.player;
     let playerCheck = this.props.player.name;
@@ -15,9 +15,9 @@ class Player extends Component {
             <h2>
               name: <span className="gold">{player.name}</span>
             </h2>
-            <h2 onClick={this.props.handleClanClick}>
+            <h2>
               clan:{" "}
-              <span id={player.clan.tag} className="clan-name gold">
+              <span id={player.clan.tag} className="gold">
                 {player.clan.name}
               </span>
             </h2>
@@ -44,7 +44,7 @@ class Player extends Component {
   }
 }
 
-export default Player;
+export default TopPlayer;
 
 // {
 //   !this.state.viewMembers ? (
