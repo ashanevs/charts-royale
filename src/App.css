@@ -16,7 +16,7 @@
   flex-wrap: wrap;
 }
 .card-icon {
-  width: 50px;
+  width: 100px;
   margin: 10px 0px 0px 0px;
 }
 .current-deck-card-container {
@@ -32,6 +32,7 @@
 .header-container {
   padding: 20px 0px;
   font-size: 26px;
+  display: inline-block;
 }
 .player-searchbar {
   height: 30px;
@@ -65,10 +66,16 @@ input {
 }
 .about-link {
   cursor: pointer;
-  margin: 20px 0px;
+  margin: 30px 0px;
+  display: inline-block;
+}
+.about-return {
+  margin: 0px 0px 30px 0px;
 }
 .return-to-top {
-  margin: 30px;
+  margin: 30px 0px;
+  cursor: pointer;
+  display: inline-block;
 }
 .about-paragraph {
   width: 50%;
@@ -79,8 +86,6 @@ input {
   background: linear-gradient(#b4624b, #ffba58);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.member-list-container {
 }
 .member {
   cursor: pointer;
@@ -123,8 +128,10 @@ input {
   .current-deck-container {
     width: 100%;
   }
+  .card-icon {
+    width: 50px;
+  }
 }
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

@@ -184,7 +184,7 @@ class App extends Component {
                     About
                   </h2>
                 ) : (
-                  <h2 className="fade">
+                  <h2 className="fade about-return">
                     Return to{" "}
                     <span
                       className="gold about-link"

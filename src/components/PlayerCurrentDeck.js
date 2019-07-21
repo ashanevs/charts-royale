@@ -25,7 +25,7 @@ class PlayerCurrentDeck extends Component {
     });
     return (
       <div className="current-deck-container">
-        <h2 className="gold">Current Deck</h2>
+        <h2>Current Deck</h2>
         <div className="current-deck-card-list">{listOne}</div>
         <div className="current-deck-card-list">{listTwo}</div>
       </div>
