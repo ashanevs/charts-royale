@@ -6,6 +6,9 @@ import PlayerRarityChart from "./PlayerRarityChart";
 import PlayerCardLevelsChart from "./PlayerCardLevelsChart";
 
 class TopPlayer extends Component {
+  returnToTop = () => {
+    window.scrollTo(0, 0);
+  };
   render() {
     let player = this.props.player;
     let playerCheck = this.props.player.name;
@@ -34,14 +37,33 @@ class TopPlayer extends Component {
           ""
         )}
         {playerCheck ? <PlayerCurrentDeck player={this.props.player} /> : ""}
-        {!playerCheck ? (
-          <h3>
-            Return{" "}
-            <Link to="/" className="gold">
-              home{" "}
-            </Link>{" "}
-            to search for a player!
+        {playerCheck ? (
+          <h3 className="return-to-top">
+            Return to{" "}
+            <span onClick={this.returnToTop} className="gold">
+              Top
+            </span>
           </h3>
+        ) : (
+          ""
+        )}
+
+        {!playerCheck ? (
+          <div>
+            {" "}
+            <img
+              src="laughingking.jpg"
+              alt="laughing-king"
+              className="king-pic"
+            />
+            <h3>
+              Return{" "}
+              <Link to="/" className="gold">
+                home{" "}
+              </Link>{" "}
+              to search for a player!
+            </h3>
+          </div>
         ) : (
           ""
         )}

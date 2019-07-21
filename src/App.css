@@ -85,6 +85,9 @@ input {
   cursor: pointer;
   margin: 20px 0px;
 }
+.return-to-top {
+  margin: 30px;
+}
 .about-paragraph {
   width: 50%;
   margin-top: 50px;

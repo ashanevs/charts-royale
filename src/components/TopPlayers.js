@@ -8,6 +8,9 @@ class TopPlayers extends Component {
       topplayers: {}
     };
   }
+  returnToTop = () => {
+    window.scrollTo(0, 0);
+  };
   render() {
     let topCheck = Object.entries(this.props.topplayers).length;
     if (topCheck > 0) {
@@ -24,7 +27,18 @@ class TopPlayers extends Component {
           </div>
         );
       });
-      return <div className="member-list-container">{list}</div>;
+      return (
+        <div className="member-list-container">
+          {" "}
+          {list}
+          <h3 className="return-to-top">
+            Return to{" "}
+            <span onClick={this.returnToTop} className="gold">
+              Top
+            </span>
+          </h3>
+        </div>
+      );
     } else
       return (
         <h3 className="fade">

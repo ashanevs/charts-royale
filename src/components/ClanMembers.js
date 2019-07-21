@@ -16,7 +16,17 @@ class ClanMembers extends Component {
         </div>
       );
     });
-    return <div className="member-list-container">{list}</div>;
+    return (
+      <div className="member-list-container">
+        {list}{" "}
+        <h3 className="return-to-top">
+          Return to{" "}
+          <span onClick={this.props.returnToTop} className="gold">
+            Top
+          </span>
+        </h3>
+      </div>
+    );
   }
 }
 

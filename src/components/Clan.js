@@ -10,6 +10,9 @@ class Clan extends Component {
       viewMembers: false
     };
   }
+  returnToTop = () => {
+    window.scrollTo(0, 0);
+  };
   handleClick = e => {
     e.preventDefault();
     if (!this.state.viewMembers) {
@@ -36,13 +39,20 @@ class Clan extends Component {
           ""
         )}
         {!clanCheck ? (
-          <h3>
-            Return{" "}
-            <Link to="/" className="gold fade">
-              home
-            </Link>{" "}
-            to search for a clan!
-          </h3>
+          <div>
+            <img
+              src="laughingking.jpg"
+              alt="laughing-king"
+              className="king-pic"
+            />
+            <h3>
+              Return{" "}
+              <Link to="/" className="gold fade">
+                home
+              </Link>{" "}
+              to search for a clan!
+            </h3>
+          </div>
         ) : (
           ""
         )}
@@ -63,9 +73,20 @@ class Clan extends Component {
           <ClanMembers
             clan={clan}
             handleMemberClick={this.props.handleMemberClick}
+            returnToTop={this.returnToTop}
           />
         ) : (
           " "
+        )}
+        {!this.state.viewMembers && clanCheck ? (
+          <h3 className="return-to-top">
+            Return to{" "}
+            <span onClick={this.returnToTop} className="gold">
+              Top
+            </span>
+          </h3>
+        ) : (
+          ""
         )}
       </div>
     );
