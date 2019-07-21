@@ -1,10 +1,20 @@
 import React, { Component } from "react";
-
 class PlayerForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: false
+    };
+  }
+  showLoadingWheel = e => {
+    e.preventDefault();
+    this.setState({ loading: true });
+  };
   render() {
     return (
       <form>
-        Search for a player by clan tag (e.g. 208RRCYGL)
+        Search for a player by tag (e.g. 208RRCYGL)
+        {this.state.loading ? <img src="loading-wheel.gif" /> : ""}
         <input
           type="text"
           name="tag"
@@ -16,7 +26,8 @@ class PlayerForm extends Component {
           type="submit"
           value="Submit"
           className="submit-button"
-          onClick={this.props.handlePlayerSearch}
+          // onClick={this.props.handlePlayerSearch}
+          onClick={(this.showLoadingWheel, this.props.handlePlayerSearch)}
         >
           Submit
         </button>

@@ -54,25 +54,31 @@ class ClanHistoryChart extends Component {
     });
   };
   render() {
+    let dataCheck = Object.entries(this.state.chartData);
+    console.log(dataCheck);
     return (
       <div className="chart">
-        <Line
-          data={this.state.chartData}
-          width={200}
-          height={150}
-          options={{
-            title: {
-              display: true,
-              text: "Clan Score Over Time",
-              fontSize: 18,
-              fontFamily: "Supercell",
-              fontColor: "#555555"
-            },
-            responsive: true,
-            animation: { animateScale: true },
-            maintainAspectRatio: true
-          }}
-        />
+        {dataCheck.length > 0 ? (
+          <Line
+            data={this.state.chartData}
+            width={200}
+            height={150}
+            options={{
+              title: {
+                display: true,
+                text: "Clan Score Over Time",
+                fontSize: 18,
+                fontFamily: "Supercell",
+                fontColor: "#555555"
+              },
+              responsive: true,
+              animation: { animateScale: true },
+              maintainAspectRatio: true
+            }}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
