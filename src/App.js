@@ -22,9 +22,6 @@ class App extends Component {
       about: false
     };
   }
-  componentDidMount = () => {
-    this.setState({ tag: "", player: {}, clan: {} });
-  };
   changeHandler = e => {
     this.setState({
       tag: e.target.value
@@ -113,10 +110,6 @@ class App extends Component {
             path="/search"
             render={props => (
               <div>
-                <h2 className="gold about-link" onClick={this.handleAboutClick}>
-                  About
-                </h2>
-                <About showAbout={this.state.about} />
                 {!this.state.about ? (
                   <PlayerForm
                     // player={this.state.player}
@@ -136,6 +129,25 @@ class App extends Component {
                   />
                 ) : (
                   ""
+                )}
+                <About showAbout={this.state.about} />
+                {!this.state.about ? (
+                  <h2
+                    className="gold about-link bottom"
+                    onClick={this.handleAboutClick}
+                  >
+                    About
+                  </h2>
+                ) : (
+                  <h2 className="bottom">
+                    Return to{" "}
+                    <span
+                      className="gold about-link"
+                      onClick={this.handleAboutClick}
+                    >
+                      Search
+                    </span>
+                  </h2>
                 )}
               </div>
             )}

@@ -53,11 +53,19 @@ form {
   /* border-radius: 5px; */
   width: 80%;
   height: 200px;
-  margin: 10px auto;
+  margin: 50px auto;
 }
 input {
   border: 2px solid #444444;
   border-radius: 5px;
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+  margin: 30px 0px;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
 }
 .name-and-clan-container,
 .clan-container {
@@ -116,6 +124,15 @@ input {
   .about-paragraph {
     width: 95%;
     line-height: 30px;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    margin: -30px 0px;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
   }
 }
 

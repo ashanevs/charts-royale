@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PlayerWinChart from "./PlayerWinChart";
-import PlayerCurrentDeck from "./PlayerCurrentDeck";
+// import PlayerCurrentDeck from "./PlayerCurrentDeck";
 import PlayerRarityChart from "./PlayerRarityChart";
 
 class Player extends Component {
@@ -27,10 +27,14 @@ class Player extends Component {
         )}
         {playerCheck ? <PlayerWinChart player={this.props.player} /> : ""}
         {playerCheck ? <PlayerRarityChart player={this.props.player} /> : ""}
-        {playerCheck ? <PlayerCurrentDeck player={this.props.player} /> : ""}
+        {/* {playerCheck ? <PlayerCurrentDeck player={this.props.player} /> : ""} */}
         {!playerCheck ? (
           <h3>
-            Return <Link to="/">home </Link> to search for a player!
+            Return{" "}
+            <Link to="/" className="gold">
+              home{" "}
+            </Link>{" "}
+            to search for a player!
           </h3>
         ) : (
           ""

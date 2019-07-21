@@ -36,7 +36,11 @@ class Clan extends Component {
         )}
         {!clanCheck ? (
           <h3>
-            Return <Link to="/">home</Link> to search for a clan!
+            Return{" "}
+            <Link to="/" className="gold">
+              home
+            </Link>{" "}
+            to search for a clan!
           </h3>
         ) : (
           ""
