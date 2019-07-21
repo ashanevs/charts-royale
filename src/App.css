@@ -17,18 +17,20 @@
   display: flex;
   /* width: 90%; */
   margin-top: 20px;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .card-icon {
   width: 100px;
   margin: 20px;
 }
 .current-deck-container {
+  /* display: flex;
+  flex-direction: column; */
   margin: 20px auto;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 3px;
-  width: 90%;
+  width: 60%;
   padding: 10px 0px;
   font-size: 10px;
 }
@@ -131,6 +133,9 @@ input {
   }
   .king-pic {
     width: 300px;
+  }
+  .current-deck-container {
+    width: 100%;
   }
   /* 
   .bottom {

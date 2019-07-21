@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import { Route, Switch, Redirect, Link } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import PlayerForm from "./components/PlayerForm";
 import ClanForm from "./components/ClanForm";
@@ -74,7 +74,6 @@ class App extends Component {
         }
       })
       .then(response => {
-        console.log(response.data);
         this.setState({ topplayers: response.data });
         this.goToTopPlayers();
       });
@@ -160,7 +159,6 @@ class App extends Component {
                 )}
                 {!this.state.about ? (
                   <PlayerForm
-                    // player={this.state.player}
                     changeHandler={this.changeHandler}
                     handlePlayerSearch={this.handlePlayerSearch}
                     {...props}
@@ -170,7 +168,6 @@ class App extends Component {
                 )}
                 {!this.state.about ? (
                   <ClanForm
-                    // player={this.state.player}
                     changeHandler={this.changeHandler}
                     handleClanSearch={this.handleClanSearch}
                     {...props}

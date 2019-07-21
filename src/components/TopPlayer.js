@@ -45,14 +45,3 @@ class TopPlayer extends Component {
 }
 
 export default TopPlayer;
-
-// {
-//   !this.state.viewMembers ? (
-//     <ClanHistoryChart
-//       clan={clan}
-//       handleMemberClick={this.props.handleMemberClick}
-//     />
-//   ) : (
-//     " "
-//   )
-// }
