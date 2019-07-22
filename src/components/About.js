@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-
-// About is only visible when boolean value in App state switches to true on click
-// Current hrefs don't open in new tab, design choice but could be altered
 class About extends Component {
   render() {
     return (

@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Charts Royale
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Charts Royale is a data visualization tool based on the mobile game Clash Royale. The data provided for the site comes from Royale API. There is a wealth of data available within the game, and this site was created to display data in new and interesting ways for player consideration.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React, Chart.js, React-chart-js2, React-router, Axios
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# View of App
 
-### `npm test`
+<img src="#" alt="charts-royale" width=500>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Link to Deployed App
 
-### `npm run build`
+https://chartsroyale.surge.sh
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Features and Planning
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+The Bronze Level goal for CR was to display several charts for an individual player on search. This goal was completed, and users will find a search form on the home page that finds a player by their in-game tag id (e.g. `208RRCYGL`). The Player page displays a pie chart containing information on their win/loss/draw ratios, a bar chart with their average card level per card rarity, and a doughnut chart showing the total number of cards per level in their collection (note that some of these charts axes began at a mid-tier level achieved by the average player in a fairly short span - this could be adjusted if desired). Also note that the player page contains the player's current deck - while this doesn't convey mathematical information, I believe it adds a nice flavor that reminds you of the mobile game, and I believe the data is useful even against the other visualizations (for instance, a player may play a max level/level 13 deck, but have very few level 13 cards in their collection - indicating a focused leveling history for their card collection).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Silver level goal was to implement Clan information. This was also completed, and users are able to search for specific clans by in-game clan id (e.g. `JG090GV`) from the home page. Clans currently only have two graphs available - a clan score (combined trophy count) over time line graph, and a tuple bar graph containing participant and win information for the last ten clan wars.
 
-### `npm run eject`
+The Gold level goals of this project include implementing information for the top players and clans specifically, and in particulary to provide a choropleth (density) map regarding player location globally. At the time of writing, only information regarding the top players has been filtered to be available on the home page. Regrettably, clan information is only available on a case-by-case basis for clans who elect to participate with Royale API, so pursuing top clan information was not always managable. The choropleth map seems possible to implement given that clan and player data includes location codes, but due to time constraints hasn't been included at present.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Getting Started / Installation Instructions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Using the site is as easy as going to the deployed link and clicking around. There are two example tags provided above the search forms that can be used in lieu of having your own data to search. Additionally, you can click the Top Players link to dive straight into the top 50 player list, which can be clicked to view individual info.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If you want to work with the full repo, first fork and clone it (https://help.github.com/en/articles/fork-a-repo). Ensure you have node installed (node --version from your CLI to check the version, if not, it is available for free from their website) then run
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm install
+```
 
-## Learn More
+from the root directory of your cloned project to install dependencies (e.g. charts.js, axios, react-router).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To begin hosting the front end locally, pass
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start
+```
 
-### Code Splitting
+into your command line. You may be prompted to use an alternate port (as the back end should be running on port 3000); press Y to automatically use the next available port. The site should open in your default browser.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+# Contribution Resources
 
-### Analyzing the Bundle Size
+Source code: https://github.com/ashanevs/charts-royale
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Issue tracker: https://github.com/ashanevs/charts-royale/issues
