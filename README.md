@@ -2,7 +2,7 @@
 
 ## Description
 
-Charts Royale is a data visualization tool based on the mobile game Clash Royale. The data provided for the site comes from Royale API. There is a wealth of data available within the game, and this site was created to display data in new and interesting ways for player consideration.
+Charts Royale is a data visualization tool based on the mobile game Clash Royale. The data provided for the site comes from Royale API. There is a wealth of data available within the game, and this site was created to display data in new and interesting ways for player consideration
 
 ## Technologies Used
 
@@ -10,7 +10,8 @@ React, Chart.js, React-chart-js2, React-router, Axios
 
 # View of App
 
-<img src="#" alt="charts-royale" width=500>
+<img src="https://raw.githubusercontent.com/ashanevs/charts-royale/master/public/piechartsroyale.png" alt="charts-royale-pie" width=500 height=250>
+<img src="https://raw.githubusercontent.com/ashanevs/charts-royale/master/public/aboutchartsroyale.png" alt="charts-royale-about" width=500 height=250>
 
 ## Link to Deployed App
 
@@ -43,6 +44,28 @@ npm start
 ```
 
 into your command line. You may be prompted to use an alternate port (as the back end should be running on port 3000); press Y to automatically use the next available port. The site should open in your default browser.
+
+# Issues
+
+There is a warning issue that occurs regarding changing state on an unmounted component while running the app on the local host. This doesn't appear on the deployed site. I believe it stems from the way that I've set up the loading wheel for the buttons on the main page - use of a set interval is meant to change the loading icon back if an invalid search query is entered after a few seconds (or if the API is slow to respond). Making the button perform the two actions as desired required using a callback. Functionally it seems fine, but this should be addressed in the future.
+
+Some API data is limited for clans only if they have elected to participate in the API's data gathering process (instructions to join are in their docs). While a ton of clans work together with the API, it limits some functionality - for instance, top 50 players have their clan links disabled to prevent searching for invalid info. This isn't an enormous issue but may lead to some errors gathering data depending on the user's search parameters. I haven't encountered this - but then, my clan is registered.
+
+In local host testing, an occasional CORS error has appeared, and I'm not sure the cause. Also, there are rate limits on gathering certain data (error 429) which have rarely been problematic.
+
+# Prospective Goals
+
+There are a ton of things I would like to do ! There were considerable time constraints in creating this app, but there is a lot on the horizon.
+
+The Gold level goal for a choropleth map remains present. Working with topojson and choosing the best dependencies to assist have already begun.
+
+It may be interesting to create a player-comparison feature, where two players can be selected and charts are generated comparing their data.
+
+Implementing my own back end may ease some of the dependency on Royale API, and could allow for options like user models and authentication.
+
+More card-related resources like deck building, deck suggestions, etc would be welcome.
+
+I particularly wanted to include information for a player which calculates the length of time it takes for them to request enough cards from their clan in order to upgrade (this is a thing I've had to do on a calculator countless times).
 
 # Contribution Resources
 
