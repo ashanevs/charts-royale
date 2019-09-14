@@ -31,7 +31,6 @@ class ClanWarChart extends Component {
     });
     let winCountArray = this.state.clanWarData.map(item => {
       let counter = 0;
-
       for (let i = 0; i < item.participants.length; i++) {
         counter += item.participants[i].wins;
       }
