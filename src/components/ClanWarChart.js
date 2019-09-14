@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const url = "https://api-v3.royaleapi.com/";
 class ClanWarChart extends Component {
   constructor() {
     super();
@@ -12,15 +14,12 @@ class ClanWarChart extends Component {
   }
   componentWillMount = () => {
     axios
-      .get(
-        "https://api.royaleapi.com/clan/" + this.props.clan.tag + "/warlog",
-        {
-          headers: {
-            Authorization:
-              "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
-          }
+      .get(proxyurl + url + "clan/" + this.props.clan.tag + "/warlog", {
+        headers: {
+          Authorization:
+            "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7InVzZXJuYW1lIjoiSGlyYWV0aCIsImRpc2NyaW1pbmF0b3IiOiI1MzUyIiwia2V5VmVyc2lvbiI6M30sInRzIjoxNTY1ODg4MTU5MjkzfQ.rlEP-CqesaXwAwNsgZ-jNpzGJ3FDYVsCvVWZtQcn_pQ"
         }
-      )
+      })
       .then(response => {
         this.setState({ clanWarData: response.data });
         this.getChartData();

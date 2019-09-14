@@ -12,8 +12,12 @@ import About from "./components/About";
 import TopPlayers from "./components/TopPlayers";
 import TopPlayer from "./components/TopPlayer";
 
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+const url = "https://api-v3.royaleapi.com/";
+
 const authToken =
-  "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo";
+  "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7InVzZXJuYW1lIjoiSGlyYWV0aCIsImRpc2NyaW1pbmF0b3IiOiI1MzUyIiwia2V5VmVyc2lvbiI6M30sInRzIjoxNTY1ODg4MTU5MjkzfQ.rlEP-CqesaXwAwNsgZ-jNpzGJ3FDYVsCvVWZtQcn_pQ";
+// "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo";
 class App extends Component {
   constructor() {
     super();
@@ -41,7 +45,7 @@ class App extends Component {
   handlePlayerSearch = e => {
     e.preventDefault();
     axios
-      .get("https://api.royaleapi.com/player/" + this.state.tag, {
+      .get(proxyurl + url + "player/" + this.state.tag, {
         headers: {
           Authorization: authToken
         }
@@ -54,7 +58,7 @@ class App extends Component {
   handleClanSearch = e => {
     e.preventDefault();
     axios
-      .get("https://api.royaleapi.com/clan/" + this.state.tag, {
+      .get(proxyurl + url + "clan/" + this.state.tag, {
         headers: {
           Authorization: authToken
         }
@@ -67,7 +71,7 @@ class App extends Component {
   handleTopPlayersClick = e => {
     e.preventDefault();
     axios
-      .get("https://api.royaleapi.com/top/players/", {
+      .get(proxyurl + url + "top/players/", {
         headers: {
           Authorization:
             "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mjc1MCwiaWRlbiI6IjI1MDQzMzU4NDEyMzQ3ODAyNiIsIm1kIjp7fSwidHMiOjE1NjMzMTc2NjQ5MjJ9.G4gAN7044E1oBnhysqh8QxwniMtoeAR8zpvtVZNPhHo"
@@ -81,7 +85,7 @@ class App extends Component {
   handleTopPlayerClick = e => {
     e.preventDefault();
     axios
-      .get("https://api.royaleapi.com/player/" + e.target.id, {
+      .get(proxyurl + url + "player/" + e.target.id, {
         headers: {
           Authorization: authToken
         }
@@ -95,7 +99,7 @@ class App extends Component {
   handleMemberClick = e => {
     e.preventDefault();
     axios
-      .get("https://api.royaleapi.com/player/" + e.target.id, {
+      .get(proxyurl + url + "player/" + e.target.id, {
         headers: {
           Authorization: authToken
         }
@@ -109,7 +113,7 @@ class App extends Component {
   handleClanClick = e => {
     e.preventDefault();
     axios
-      .get("https://api.royaleapi.com/clan/" + e.target.id, {
+      .get(proxyurl + url + "clan/" + e.target.id, {
         headers: {
           Authorization: authToken
         }
@@ -147,7 +151,7 @@ class App extends Component {
             path="/search"
             render={props => (
               <div>
-                {!this.state.about ? (
+                {/* {!this.state.about ? (
                   <h2
                     className="gold about-link fade"
                     onClick={this.handleTopPlayersClick}
@@ -156,7 +160,7 @@ class App extends Component {
                   </h2>
                 ) : (
                   ""
-                )}
+                )} */}
                 {!this.state.about ? (
                   <PlayerForm
                     changeHandler={this.changeHandler}
